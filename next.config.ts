@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/portfolio-website', // Repo adınızı buraya yazın
-  assetPrefix: '/portfolio-website', // Statik dosyalar için doğru yolu ayarlayın
+  basePath: '/portfolio-web', // Repo adınızı buraya yazın
+  assetPrefix: '/portfolio-web', // Statik dosyalar için doğru yolu ayarlayın
   trailingSlash: true, // Tüm URL'lerin "/" ile bitmesini sağlar
 };
 
