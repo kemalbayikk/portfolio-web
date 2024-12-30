@@ -3,10 +3,9 @@ import {
   UserIcon,
   BriefcaseIcon,
   CodeBracketIcon,
-  ArrowDownTrayIcon,
 } from "@heroicons/react/24/outline";
 import { DiPython } from "react-icons/di";
-import { FaGithub, FaLinkedin, FaTwitter, FaBrain, FaRobot, FaCode, FaObjectGroup, FaAws } from "react-icons/fa"; // Font Awesome ikonları
+import { FaGithub, FaBrain, FaRobot, FaCode, FaDna, FaAws, FaEye } from "react-icons/fa"; // Font Awesome ikonları
 import {
   SiPython,
   SiPytorch,
@@ -16,11 +15,19 @@ import {
   SiFlutter,
   SiGit,
   SiMysql,
+  SiDotnet,
+  SiJavascript,
+  SiTypescript,
+  SiReact
 } from "react-icons/si";
-import { MdComputer, MdImage } from "react-icons/md";
-import { useState } from "react";
+import { MdGTranslate, MdImage } from "react-icons/md";
+import { TbSql } from "react-icons/tb";
+import { useState, useEffect } from "react";
 
 const Home: React.FC = () => {
+  useEffect(() => {
+    document.title = "Kemal Bayik - Portfolio";
+  }, [])
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="font-poppins bg-gray-100 text-gray-900">
@@ -32,54 +39,87 @@ const Home: React.FC = () => {
             <h1 className="pt-8 md:pt-0 text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight">
               Hello, I’m Kemal!
             </h1>
-            <p className="text-xs sm:text-xl md:text-xl text-gray-700 leading-relaxed overflow-hidden">
+            <p className="text-sm sm:text-xl md:text-xl text-gray-700 leading-relaxed overflow-hidden">
                 I’m a Machine Learning Engineer specializing in creating intelligent models and scalable AI solutions. 
                 Passionate about solving real-world problems through advanced machine learning techniques.
             </p>
-            {/* CV ve Sosyal Medya Bağlantıları */}
-            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start mt-8 space-y-4 md:space-y-0 md:space-x-6">
-              {/* CV İndirme Butonu */}
-              <a
-                href="/files/kemal_bayik_cv.pdf"
-                download="Kemal_Bayik_CV"
-                className="flex items-center bg-blue-600 text-white font-medium py-2 px-6 rounded-full shadow-md hover:bg-blue-900 hover:text-white transition duration-300"
-              >
-                <ArrowDownTrayIcon className="h-5 w-5 mr-2" />
-                Download CV
-              </a>
+            {/* CV ve İletişim Alanı */}
+<div className="mt-8 bg-gray-100 shadow-lg rounded-lg p-6 md:p-8 flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8">
+  {/* Sol Taraf: Mesaj ve CV İndirme */}
+  <div className="flex-1 flex flex-col items-center md:items-start space-y-4">
+    <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-2 text-center md:text-left">
+      Get In Touch
+    </h3>
+    <p className="text-gray-700 text-sm md:text-base text-center md:text-left">
+    Whether you have a question, want to collaborate on a project, or just want to say hi, feel free to drop me a message. I’m always open to exciting opportunities!
+    </p>
 
-              {/* Sosyal Medya Bağlantıları */}
-              <div className="flex space-x-6">
-                <a
-                  href="https://github.com/kemalbayikk"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-500 hover:text-gray-900 transition-transform duration-300 hover:scale-110"
-                >
-                  <FaGithub className="w-6 h-6" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/kemalbayikk"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-500 hover:text-blue-600 transition-transform duration-300 hover:scale-110"
-                >
-                  <FaLinkedin className="w-6 h-6" />
-                </a>
-                <a
-                  href="https://twitter.com/kemalbayikk"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-500 hover:text-blue-400 transition-transform duration-300 hover:scale-110"
-                >
-                  <FaTwitter className="w-6 h-6" />
-                </a>
-              </div>
-            </div>
+    {/* CV İndirme Butonu */}
+    {/* <a
+      href="/files/kemal_bayik_cv.pdf"
+      download="Kemal_Bayik_CV"
+      className="flex items-center bg-blue-600 text-white font-medium py-2 px-6 rounded-full shadow-md hover:bg-blue-900 hover:text-white transition duration-300"
+    >
+      <ArrowDownTrayIcon className="h-5 w-5 mr-2" />
+      Download CV
+    </a> */}
+  </div>
+
+  {/* Sağ Taraf: İletişim ve Sosyal Medya Bağlantıları */}
+  <div className="flex flex-col items-center md:items-start space-y-4">
+    {/* E-posta Butonu */}
+    <a
+      href="mailto:kemalbayikuk@gmail.com"
+      className="flex items-center justify-center bg-blue-600 text-white font-medium py-2 px-6 rounded-full shadow-md hover:bg-blue-900 hover:text-white transition duration-300 w-full text-center"
+    >
+      📧 Email Me
+    </a>
+
+    {/* LinkedIn Butonu */}
+    <a
+      href="https://www.linkedin.com/in/kemal-bayik/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center justify-center bg-blue-500 text-white font-medium py-2 px-6 rounded-full shadow-md hover:bg-blue-700 hover:text-white transition duration-300 w-full text-center"
+    >
+      💼 Connect on LinkedIn
+    </a>
+
+    {/* GitHub Butonu */}
+    <a
+      href="https://github.com/kemalbayikk"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center justify-center bg-gray-800 text-white font-medium py-2 px-6 rounded-full shadow-md hover:bg-gray-900 hover:text-white transition duration-300 w-60 text-center"
+    >
+      🐙 GitHub
+    </a>
+
+    {/* Sosyal Medya İkonları */}
+    {/* <div className="flex space-x-4">
+      <a
+        href="https://github.com/kemalbayikk"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-gray-500 hover:text-gray-900 transition-transform duration-300 hover:scale-110"
+      >
+        <FaGithub className="w-6 h-6" />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/kemal-bayik/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-gray-500 hover:text-blue-600 transition-transform duration-300 hover:scale-110"
+      >
+        <FaLinkedin className="w-6 h-6" />
+      </a>
+    </div> */}
+  </div>
+</div>
           </div>
 
           {/* Sağ Taraf: Brain Animation */}
-          <div>
+          <div className="hidden sm:block">
             <img
               src="/images/person-working.png"
               alt="Person Working"
@@ -215,17 +255,20 @@ const Home: React.FC = () => {
     { Icon: SiTensorflow, title: "TensorFlow" },
     { Icon: FaBrain, title: "Machine Learning" },
     { Icon: FaRobot, title: "Deep Learning" },
-    { Icon: MdComputer, title: "Computer Vision" },
-    { Icon: FaCode, title: "CNNs" },
-    { Icon: FaRobot, title: "NLP" },
-    { Icon: MdImage, title: "Image Processing" },
-    { Icon: FaObjectGroup, title: "Genetic Algorithms" },
+    { Icon: FaEye, title: "Computer Vision" },
+    { Icon: MdImage, title: "Image Processing"},
+    { Icon: MdGTranslate, title: "NLP" },
+    { Icon: FaDna, title: "Genetic Algorithms" },
     { Icon: FaCode, title: "OOP" },
     { Icon: FaAws, title: "AWS" },
-    { Icon: SiMysql, title: "SQL" },
+    { Icon: TbSql, title: "SQL" },
+    { Icon: SiDotnet, title: ".Net" },
     { Icon: SiGit, title: "Git" },
     { Icon: SiFirebase, title: "Firebase" },
     { Icon: SiFlutter, title: "Flutter" },
+    { Icon: SiJavascript, title: "Javascript" },
+    { Icon: SiTypescript, title: "Typescript" },
+    { Icon: SiReact, title: "React" },
   ].map(({ Icon, title }, index) => (
     <div
       key={index}
@@ -434,14 +477,14 @@ const Home: React.FC = () => {
               <h3 className="text-sm lg:text-xl font-bold text-gray-800 text-center">
                 {project.title}
               </h3>
-              <a
+              {/* <a
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-gray-900 transition-colors"
               >
                 <FaGithub className="w-6 h-6" />
-              </a>
+              </a> */}
             </div>
 
             {/* Description */}
@@ -451,14 +494,23 @@ const Home: React.FC = () => {
 
             {/* Technologies */}
             <div className="flex space-x-3">
-              {project.technologies.map((TechIcon, i) => (
+            <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-gray-900 transition-colors"
+              >
+                <FaGithub className="w-6 h-6" />
+              </a>
+              
+              {/* {project.technologies.map((TechIcon, i) => (
                 <div
                   key={i}
                   className="p-2 bg-gray-100 rounded-full flex items-center justify-center shadow-sm"
                 >
                   <TechIcon className="w-6 h-6 text-gray-700" />
                 </div>
-              ))}
+              ))} */}
             </div>
           </div>
         </div>
